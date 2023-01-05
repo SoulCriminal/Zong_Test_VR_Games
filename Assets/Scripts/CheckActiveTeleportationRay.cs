@@ -11,13 +11,17 @@ public class CheckActiveTeleportationRay : MonoBehaviour
 
     [SerializeField] private InputActionProperty leftActive;
     [SerializeField] private InputActionProperty rightActive;
+
+    [SerializeField] private InputActionProperty leftCansel;
+    [SerializeField] private InputActionProperty rightCansel;
  
 
     // Update is called once per frame
     void Update()
     {
         //Code that checks whether to enable teleporting when the button is pressed.
-        leftTeleportation.SetActive(leftActive.action.ReadValue<float>() > 0.1f);
-        rightTeleportation.SetActive(rightActive.action.ReadValue<float>() > 0.1f);
+        //If we are holding an object, we prevent teleportation.
+        leftTeleportation.SetActive(leftCansel.action.ReadValue<float>() == 0 && leftActive.action.ReadValue<float>() > 0.1f);
+        rightTeleportation.SetActive(rightCansel.action.ReadValue<float>() == 0 && rightActive.action.ReadValue<float>() > 0.1f);
     }
 }
