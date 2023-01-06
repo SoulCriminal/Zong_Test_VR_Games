@@ -6,6 +6,8 @@ using UnityEngine;
 public class ChestController : MonoBehaviour
 {
     [SerializeField] private GameObject chest;
+    [SerializeField] private AudioSource chestOpen;
+    [SerializeField] private AudioSource chestClosing;
    
     
 
@@ -24,6 +26,7 @@ public class ChestController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             _chestAnim.SetBool("isTrigger",true);
+            chestOpen.Play();
            
         }
     }
@@ -33,6 +36,7 @@ public class ChestController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             _chestAnim.SetBool("isTrigger",false);
+            chestClosing.Play();
             
         }
     }
