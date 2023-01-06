@@ -6,6 +6,8 @@ using UnityEngine;
 public class ChestController : MonoBehaviour
 {
     [SerializeField] private GameObject chest;
+    [SerializeField] private GameObject VFX;
+    
 
     private Animator _chestAnim;
     // Start is called before the first frame update
@@ -21,6 +23,7 @@ public class ChestController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             _chestAnim.SetBool("isTrigger",true);
+            VFX.gameObject.SetActive(true);
         }
     }
 
@@ -29,6 +32,7 @@ public class ChestController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             _chestAnim.SetBool("isTrigger",false);
+            VFX.gameObject.SetActive(false);
         }
     }
 }

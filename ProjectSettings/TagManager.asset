@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LeftHand
   - RightHand
+  - Chest1
   layers:
   - Default
   - TransparentFX
