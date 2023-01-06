@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollectInstruments : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class CollectInstruments : MonoBehaviour
         Instrument.gameObject.SetActive(true);  
         SphereCanvas.gameObject.SetActive(true);
         MaterialShape.gameObject.SetActive(false);
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     
 }
