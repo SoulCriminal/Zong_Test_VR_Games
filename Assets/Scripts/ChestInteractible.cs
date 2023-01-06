@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class ChestInteractible : MonoBehaviour
 {
     [SerializeField] private GameObject VFX1;
     [SerializeField] private GameObject VFX2;
@@ -16,7 +16,7 @@ public class Test : MonoBehaviour
     
 
 
-  //The actions that will be taken when we put the sphere in the chest in order: 
+    //The actions that will be taken when we put the sphere in the chest in order: 
 
     private void OnTriggerEnter(Collider other)
     {
